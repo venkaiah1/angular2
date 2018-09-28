@@ -1,0 +1,35 @@
+<div [formGroup]='userForm'>
+  First name *:
+  <br>
+  <input type="text" formControlName="firstname">
+  <br> Last name:
+  <br>
+  <input type="text" formControlName="lastname">
+  <br>
+  <br>Date
+  <br>
+  <input type='text' formControlName="DOB">
+  <br>Check Agree
+  <input type="checkbox" formControlName="isAgree">
+  <br>
+  <br>
+  <input type="submit" (click)="saveData(userForm.value)" [disabled]="userForm.invalid || userForm.pristine">
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Terms</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let x of getData">
+      <td>{{x.firstname}}</td>
+      <td>{{x.lastname}}</td>
+      <td>{{x.isAgree ? 'Yes': 'No'}}</td>
+    </tr>
+  </tbody>
+</table>
+<div (click)="navigateComponent()">Navitage To Home</div>

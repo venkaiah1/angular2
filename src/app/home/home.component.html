@@ -1,0 +1,6 @@
+<h1>{{title}}</h1>
+<div>{{data[0].name + ' ' + data[0].lastName}}</div>
+<img src="{{newImage}}">
+<p (click)='changeHeading()'>Change The headding</p>
+<input type="text" [value]="myName ? myName : 'venkey'">
+<app-child [title]="homeTitle"></app-child>
